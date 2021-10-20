@@ -16,7 +16,7 @@ export const PublicNavbar = () => (
 export const PrivateNavbar = () => (
   <nav>
     <section>
-      <img src={favicon} alt="icon" />
+      <Link className="navbar-logo" to="/"><img src={favicon} alt="icon" /></Link>
       <Link to="/">Home</Link>
       <Link to="/questions">Questions</Link>
       <Link to="/new">New</Link>

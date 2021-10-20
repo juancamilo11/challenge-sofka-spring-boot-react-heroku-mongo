@@ -1,8 +1,10 @@
-body {
+body, .footer-app {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+    margin-bottom: -90px;
   }
   
   p {
@@ -40,6 +42,10 @@ body {
   a {
     color: #ea3546;
     text-decoration: none;
+  }
+
+  .navbar-logo {
+    margin-right: 80%;
   }
   
   section {
@@ -111,32 +117,30 @@ body {
 
   .footer-app {
     width: 100%;
+    height: 90px;
     background-color: #ea3546;
     color: black;
-    padding: 20px;
+    padding: 0px;
     text-align: center;
     display: inline-flex;
     font-size: 14px;
-    margin-left:-10px;
-    margin-right: -10px;
-    margin-bottom: -10px;
     position:absolute;
-    bottom: 0px;
+    bottom: 90px;
   }
     
-    .footer__item {
+  .footer__item {
     display: inline-flex;
     width: 40%;
-    margin-left: -100px;
+    margin-left: 80px;
     justify-content: center;
     align-items: center;
   }
     
-    .footer__item--copyright {
+  .footer__item--copyright {
     display: inline-flex;
     color: rgb(255, 255, 255);
     width: 60%;
-    font-weight: 800;
+    font-weight: 100;
     justify-content: space-evenly;
   }
     

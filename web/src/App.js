@@ -53,7 +53,6 @@ const App = ({ dispatch }) => {
             <Route exact path="/new" component={QuestionFormPage} />
             <Redirect to="/" />
           </Switch>
-          <Footer />
         </> :
         <>
           <PublicNavbar />
@@ -66,9 +65,9 @@ const App = ({ dispatch }) => {
             <Route exact path="/answer/:id" component={AnswerFormPage} />
             <Redirect to="/" />
           </Switch>
-          <Footer />
         </>
       }
+      <Footer />
     </Router>
   )
 }
