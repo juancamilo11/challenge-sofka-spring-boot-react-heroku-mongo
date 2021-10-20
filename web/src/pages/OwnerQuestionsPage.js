@@ -21,13 +21,15 @@ const OwnerQuestionsPage = ({ dispatch, loading, questions, hasErrors, redirect,
            title:"Do you really want to delete the question?",
            text:"By pressing the delete button the question and its answers will be deleted.",
            icon:"warning",
-           buttons:["Cancel", "confirm"]
+           buttons:["Cancel", "Confirm"]
         }).then(answerDeleted => {
-            answerDeleted && dispatch(deleteQuestion(id))
-            swal({
-                text:"The question and its answers have been deleted.",
-                icon:"success"
-            });
+            if(answerDeleted) {
+                dispatch(deleteQuestion(id))
+                swal({
+                    text:"The question and its answers have been deleted.",
+                    icon:"success"
+                });
+            }
         })
     }
 
