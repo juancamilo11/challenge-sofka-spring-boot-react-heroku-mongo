@@ -5,7 +5,7 @@ import favicon from '../img/favicon.ico'
 export const PublicNavbar = () => (
   <nav>
     <section>
-      <img src={favicon} alt="Icon" />
+      <img className="img-icon" src={favicon} alt="Icon" />
       <Link to="/">Home</Link>
       <Link to="/questions">Questions</Link>
     </section>
