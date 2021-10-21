@@ -60,7 +60,8 @@ const App = ({ dispatch }) => {
               exact path="/login"
               component={()=> {
                 return (
-                  <LoginPage dispatch={dispatch} />
+                  <LoginPage dispatch={dispatch}>
+                  </LoginPage>
                 );
                 }} 
               />
@@ -77,8 +78,7 @@ const App = ({ dispatch }) => {
           </Switch>
         </>
       }
-      <LoginPage />
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   )
 }

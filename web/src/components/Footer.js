@@ -1,23 +1,23 @@
-import React from 'react'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 export const Footer = () => {
     return (
-        <footer className="footer-app">
-        <div className="footer__item">
-           <div className="contact__item">
-              <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook"></i></a>
-           </div>
-           <div className="contact__item">
-              <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram"></i></a>
-           </div>
+        <div className="footer-basic">
+            <footer>
+                <div class="social">
+                    <a href="#">
+                        <i class="fab fa-facebook"></i>
+                    </a> 
+                    <a href="#">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p className="copyright">SofkaU © 2021</p>
+            </footer>
         </div>
-        <div className="footer__item footer__item--copyright">
-           <img className="author-rights__item footer-copyright--logo" src="../img/logo-navbar.png" alt="logo"/>
-           <div className="author-rights">
-              <p className="author-rights__item">&copy; Copyright © 2021. @SofkaU. </p>
-              <p className="author-rights__item">All Rights Reserved</p>
-           </div>
-        </div>
-     </footer>
     )
 }
