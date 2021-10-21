@@ -7,8 +7,8 @@ import {Input} from '../components/Input'
 const FormPage = ({ dispatch, loading, redirect, userId }) => {
     
     const [formState, setformState] = useState({
-        type:'',
-        category:''
+        type:'OPEN (LONG OPEN BOX)',
+        category:'TECHNOLOGY AND COMPUTER'
     })
     const [content, setContent] = useState('');
     const history = useHistory();
@@ -19,11 +19,6 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
         }
         return false;
     }
-
-    // const onSubmit = data => {
-    //     data.userId = userId;
-    //     dispatch(postQuestion(data));
-    // };
   
     const onSubmit = e => {
         e.preventDefault();
@@ -55,18 +50,18 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
             <h1>New Question</h1>
             <form onSubmit={onSubmit}>
                 <div>
-                    <label value={0} htmlFor="type">Type</label>
+                    <label htmlFor="type">Type</label>
                     <select onChange={handleInputTypeChange} id="type">
-                        <option defaultValue value="OPEN (LONG OPEN BOX)">OPEN (LONG OPEN BOX)</option>
+                        <option value="OPEN (LONG OPEN BOX)">OPEN (LONG OPEN BOX)</option>
                         <option value="OPINION (SHORT OPEN BOX)">OPINION (SHORT OPEN BOX)</option>
                         <option value="WITH RESULT (OPEN BOX WITH LINK)">WITH RESULT (OPEN BOX WITH LINK)</option>
                         <option value="WITH EVIDENCE (OPEN BOX WITH VIDEO)">WITH EVIDENCE (OPEN BOX WITH VIDEO)</option>
                     </select>
                 </div>
                 <div>
-                    <label value={0} htmlFor="category">Category</label>
+                    <label htmlFor="category">Category</label>
                     <select onChange={handleInputCategoryChange} id="category">
-                        <option defaultValue value="TECHNOLOGY AND COMPUTER">TECHNOLOGY AND COMPUTER</option>
+                        <option value="TECHNOLOGY AND COMPUTER">TECHNOLOGY AND COMPUTER</option>
                         <option value="SCIENCES">SCIENCES</option>
                         <option value="SOFTWARE DEVELOPMENT">SOFTWARE DEVELOPMENT</option>
                         <option value="SOCIAL SCIENCES">SOCIAL SCIENCES</option>
@@ -77,14 +72,12 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
                 <div>
                     <label htmlFor="question">Question</label>
                     <Input id="question" setContent={setContent}/>
-                    {/* <textarea id="question" {...register("question", { required: true, maxLength: 300 })} /> */}
                 </div>
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"
                 }</button>
             </form>
         </section>
-
     );
 }
 
