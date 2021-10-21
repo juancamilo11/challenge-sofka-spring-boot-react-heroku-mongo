@@ -19,6 +19,8 @@ import AnswerFormPage from './pages/AnswerFormPage'
 import OwnerQuestionsPage from './pages/OwnerQuestionsPage'
 import { useAuthState } from "react-firebase-hooks/auth";
 import {Footer} from './components/Footer'
+import {LoginPage} from './pages/LoginPage'
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyD1FAJa3tEqtFHa2oBtr_hn3mEymVW5-aY",
@@ -63,10 +65,15 @@ const App = ({ dispatch }) => {
             <Route exact path="/questions" component={QuestionsPage} />
             <Route exact path="/question/:id" component={SingleQuestionPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
+            <Route exact path="/login"
+              component={()=>{
+                <Login dispatch={dispatch} />
+              }} />
             <Redirect to="/" />
           </Switch>
         </>
       }
+      <LoginPage />
       {/* <Footer /> */}
     </Router>
   )
