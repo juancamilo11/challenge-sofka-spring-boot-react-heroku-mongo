@@ -88,4 +88,14 @@ public class QuestionRouter {
                         .body(BodyInserters.fromPublisher(deleteUseCase.apply(request.pathVariable("id")), Void.class))
         );
     }
+
+    @Bean
+    public RouterFunction<ServerResponse> deleteAnswer(DeleteAnswerByIdUseCase deleteAnswerByIdUseCase) {
+        return route(
+                DELETE("/deleteAnswer/{id}").and(accept(MediaType.APPLICATION_JSON)),
+                request -> ServerResponse.accepted()
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .body(BodyInserters.fromPublisher(deleteAnswerByIdUseCase.apply(request.pathVariable("id")), Void.class))
+        );
+    }
 }

@@ -125,7 +125,7 @@ body, .footer-app {
     display: inline-flex;
     font-size: 14px;
     position:absolute;
-    bottom: 90px;
+    bottom: -200px;
   }
     
   .footer__item {
