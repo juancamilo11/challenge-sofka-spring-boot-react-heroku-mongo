@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import favicon from '../img/favicon.ico'
 
 export const PublicNavbar = () => (
-  <nav>
+  <nav class="navbar">
       <img className="img-icon" src={favicon} alt="Icon" />
     <section>
       <Link to="/">Home</Link>
@@ -15,9 +15,9 @@ export const PublicNavbar = () => (
 )
 
 export const PrivateNavbar = () => (
-  <nav>
+  <nav class="navbar">
+      <img src={favicon} alt="Icon" />
     <section>
-      <Link className="navbar-logo" to="/"><img src={favicon} alt="icon" /></Link>
       <Link to="/">Home</Link>
       <Link to="/questions">Questions</Link>
       <Link to="/new">New</Link>

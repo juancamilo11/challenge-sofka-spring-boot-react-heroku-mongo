@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 
 import { fetchQuestion, deleteAnswer } from '../actions/questionActions'
 
-import { Question } from '../components/Question'
-import { Answer } from '../components/Answer'
-import { Link } from 'react-router-dom'
+import { Question } from '../components/Question';
+import { Answer } from '../components/Answer';
+import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
+import QuestionReviewForm from '../components/QuestionReviewForm';
 
 const SingleQuestionPage = ({
   match,
@@ -26,7 +27,12 @@ const SingleQuestionPage = ({
     if (loading.question) return <p>Loading question...</p>
     if (hasErrors.question) return <p>Unable to display question.</p>
 
-    return <Question question={question} />
+    return( 
+    <div>  
+      <Question question={question} />
+      <QuestionReviewForm question={question} />
+    </div>
+    );
   }
 
   const onDelete = id => {

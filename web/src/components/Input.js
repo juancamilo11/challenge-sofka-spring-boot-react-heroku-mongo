@@ -9,12 +9,12 @@ export const Input = ({setContent}) => {
 	}
 	
 	return (
-            <JoditEditor
-            	ref={editor}
-                config={config}
-                tabIndex={1} // tabIndex of textarea
-                onBlur={newContent => setContent(newContent)} // update the content for performance reasons
-                onChange={newContent => {}}
-            />
-        );
+        <JoditEditor
+            ref={editor}
+            config={config}
+            tabIndex={1} // tabIndex of textarea
+            onBlur={newContent => setContent(newContent)} // update the content for performance reasons
+            onChange={newContent => {}}
+        />
+    );
 }

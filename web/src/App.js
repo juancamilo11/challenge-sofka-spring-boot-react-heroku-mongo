@@ -18,19 +18,10 @@ import QuestionFormPage from './pages/QuestionFormPage'
 import AnswerFormPage from './pages/AnswerFormPage'
 import OwnerQuestionsPage from './pages/OwnerQuestionsPage'
 import { useAuthState } from "react-firebase-hooks/auth";
-import {Footer} from './components/Footer'
-import {LoginPage} from './pages/LoginPage'
+import {Footer} from './components/Footer';
+import {LoginPage} from './pages/LoginPage';
+import {RegisterPage} from './pages/RegisterPage';
 
-
-firebase.initializeApp({
-  apiKey: "AIzaSyD1FAJa3tEqtFHa2oBtr_hn3mEymVW5-aY",
-  authDomain: "chat-app-sofka.firebaseapp.com",
-  projectId: "chat-app-sofka",
-  storageBucket: "chat-app-sofka.appspot.com",
-  messagingSenderId: "125870203988",
-  appId: "1:125870203988:web:c22b550089554beae439c1",
-  measurementId: "G-5YS3R0Z7YC"
-});
 
 const auth = firebase.auth();
 
@@ -60,15 +51,28 @@ const App = ({ dispatch }) => {
           <PublicNavbar />
           <Switch>
             <Route exact path="/" component={() => {
-              return <HomePage><SignIn dispatch={dispatch} /></HomePage>
+              return <HomePage/>
             }} />
             <Route exact path="/questions" component={QuestionsPage} />
             <Route exact path="/question/:id" component={SingleQuestionPage} />
             <Route exact path="/answer/:id" component={AnswerFormPage} />
-            <Route exact path="/login"
-              component={()=>{
-                <Login dispatch={dispatch} />
-              }} />
+            <Route 
+              exact path="/login"
+              component={()=> {
+                return (
+                  <LoginPage dispatch={dispatch} />
+                );
+                }} 
+              />
+            <Route
+              exact path="/Register"
+              component={() => {
+                return (
+                  <RegisterPage dispatch={dispatch}>
+                  </RegisterPage>
+                );
+              }}
+            />
             <Redirect to="/" />
           </Switch>
         </>

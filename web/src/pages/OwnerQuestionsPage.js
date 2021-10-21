@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { connect, shallowEqual } from 'react-redux'
+import { connect } from 'react-redux'
 
 import { fetchOwnerQuestions, deleteQuestion } from '../actions/questionActions'
 import { Question } from '../components/Question'
@@ -32,7 +32,6 @@ const OwnerQuestionsPage = ({ dispatch, loading, questions, hasErrors, redirect,
             }
         })
     }
-
 
     const renderQuestions = () => {
         if (loading) return <p>Loading questions...</p>
