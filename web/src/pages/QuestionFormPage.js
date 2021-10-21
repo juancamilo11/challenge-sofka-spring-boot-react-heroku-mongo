@@ -49,6 +49,7 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
                 <div>
                     <label for="question">Question</label>
                     <textarea id="question" {...register("question", { required: true, maxLength: 300 })} />
+                    
                 </div>
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"

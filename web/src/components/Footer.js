@@ -5,10 +5,10 @@ export const Footer = () => {
         <footer className="footer-app">
         <div className="footer__item">
            <div className="contact__item">
-              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook"></i></a>
            </div>
            <div className="contact__item">
-              <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.instagram.com/" target="_blank"><i className="fab fa-instagram"></i></a>
            </div>
         </div>
         <div className="footer__item footer__item--copyright">
