@@ -73,17 +73,18 @@ import { Question } from '../components/Question'
 import { Input } from "../components/Input";
 
 const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, userId }) => {
-    const [content, setContent] = useState('')
+    
+    const [content, setContent] = useState('');
     //const { register, handleSubmit } = useForm();
     const { id } = match.params
     const history = useHistory();
 
-    const validateInput = ({answer}) => {
-        if(answer.length && answer.length <=300) {
-            return true;
-        }
-        return false;
-    }
+    // const validateInput = ({answer}) => {
+    //     if(answer.length && answer.length <=300) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     const onSubmit = e => {
         e.preventDefault()
@@ -94,7 +95,7 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
             answer:content
         }
         validateInput(data) && dispatch(postAnswer(data));
-    };
+    }
 
     useEffect(() => {
         dispatch(fetchQuestion(id))

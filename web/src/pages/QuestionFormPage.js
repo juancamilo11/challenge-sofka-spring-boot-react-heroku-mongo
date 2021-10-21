@@ -1,3 +1,12 @@
+/**
+ * {type: 'WITH RESULT (OPEN BOX WITH LINK)', category: 'SCIENCES', question: 'Prueba de nueva pregunta', userId: 'Voy3keopU7erdhopAMU795jfLHx1'}
+category: "SCIENCES"
+question: "Prueba de nueva pregunta"
+type: "WITH RESULT (OPEN BOX WITH LINK)"
+userId: "Voy3keopU7erdhopAMU795jfLHx1"
+[[Prototype]]: Object
+ */
+
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
@@ -5,13 +14,45 @@ import { postQuestion } from '../actions/questionActions'
 import { connect } from 'react-redux'
 
 const FormPage = ({ dispatch, loading, redirect, userId }) => {
+    
+    const [contentForm, setContentForm] = useState({
+        category:''
+    });
     const { register, handleSubmit } = useForm();
     const history = useHistory();
 
+    // const validateInput = ({question}) => {
+    //     if(question.length && answer.length <=300) {
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
     const onSubmit = data => {
         data.userId = userId;
+        console.log(data);
         dispatch(postQuestion(data));
     };
+
+    /** 
+     * const validateInput = ({answer}) => {
+        if(answer.length && answer.length <=300) {
+            return true;
+        }
+        return false;
+    }
+
+    const onSubmit = e => {
+        e.preventDefault()
+        
+        const data = {
+            userId,
+            questionId:id,
+            answer:content
+        }
+        validateInput(data) && dispatch(postAnswer(data));
+    }
+    */
 
     useEffect(() => {
         if (redirect) {
@@ -49,7 +90,7 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
                 <div>
                     <label for="question">Question</label>
                     <textarea id="question" {...register("question", { required: true, maxLength: 300 })} />
-                    
+                    {/* <Input id="question" setContent={setContent} /> */}
                 </div>
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"
