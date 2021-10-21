@@ -79,12 +79,12 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
     const { id } = match.params
     const history = useHistory();
 
-    // const validateInput = ({answer}) => {
-    //     if(answer.length && answer.length <=300) {
-    //         return true;
-    //     }
-    //     return false;
-    // }
+    const validateInput = ({answer}) => {
+        if(answer.length && answer.length <=300) {
+            return true;
+        }
+        return false;
+    }
 
     const onSubmit = e => {
         e.preventDefault()

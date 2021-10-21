@@ -67,7 +67,7 @@ const App = ({ dispatch }) => {
           </Switch>
         </>
       }
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   )
 }

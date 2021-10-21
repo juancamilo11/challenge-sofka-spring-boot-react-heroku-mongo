@@ -6,7 +6,6 @@ export const Input = ({setContent}) => {
 
     const handleChange = newContent => {
         //console.log(content)
-        //console.log(content)
     }
 
 	const config = {
