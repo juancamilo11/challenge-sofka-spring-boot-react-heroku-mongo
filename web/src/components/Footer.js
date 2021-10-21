@@ -1,21 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 export const Footer = () => {
     return (
         <div className="footer-basic">
             <footer>
-                <div class="social">
-                    <a href="#">
-                        <i class="fab fa-facebook"></i>
+                <div className="social">
+                    <a href="https://www.facebook.com/JuanCamiloDev/">
+                        <i className="fab fa-facebook"></i>
                     </a> 
-                    <a href="#">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/juanccc-dev/">
+                        <i className="fab fa-linkedin"></i>
                     </a>
-                    <a href="#">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/juancamilo11/">
+                        <i className="fab fa-github"></i>
                     </a>
                 </div>
+                <p className="copyright">Made with 💟 by JuanCamiloCC.</p>
                 <p className="copyright">SofkaU © 2021</p>
             </footer>
         </div>
