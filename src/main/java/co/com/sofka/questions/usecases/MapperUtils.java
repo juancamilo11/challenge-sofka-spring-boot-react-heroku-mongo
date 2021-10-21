@@ -14,6 +14,7 @@ public class MapperUtils {
     public Function<AnswerDTO, Answer> mapperToAnswer() {
         return updateAnswer -> {
             var answer = new Answer();
+            answer.setId(updateAnswer.getId());
             answer.setPosition(updateAnswer.getPosition());
             answer.setQuestionId(updateAnswer.getQuestionId());
             answer.setUserId(updateAnswer.getUserId());
@@ -31,9 +32,14 @@ public class MapperUtils {
             question.setQuestion(updateQuestion.getQuestion());
             question.setUserId(updateQuestion.getUserId());
             question.setType(updateQuestion.getType());
+            question.setNumberOfReviews(updateQuestion.getNumberOfReviews());
+            question.setSumOfReviewScores(updateQuestion.getSumOfReviewScores());
+            question.setUserReviews(updateQuestion.getUserReviews());
             return question;
         };
     }
+
+
 
     public Function<Question, QuestionDTO> mapEntityToQuestion() {
         return entity -> new QuestionDTO(
@@ -41,7 +47,10 @@ public class MapperUtils {
                 entity.getUserId(),
                 entity.getQuestion(),
                 entity.getType(),
-                entity.getCategory()
+                entity.getCategory(),
+                entity.getNumberOfReviews(),
+                entity.getSumOfReviewScores(),
+                entity.getUserReviews()
         );
     }
 

@@ -1,5 +1,6 @@
 package co.com.sofka.questions.routers;
 
+import co.com.sofka.questions.collections.Review;
 import co.com.sofka.questions.model.AnswerDTO;
 import co.com.sofka.questions.model.QuestionDTO;
 import co.com.sofka.questions.usecases.*;
@@ -98,4 +99,29 @@ public class QuestionRouter {
                         .body(BodyInserters.fromPublisher(deleteAnswerByIdUseCase.apply(request.pathVariable("id")), Void.class))
         );
     }
+
+    @Bean
+    public RouterFunction<ServerResponse> update(UpdateQuestionUseCase updateQuestionUseCase) {
+        return route(PUT("/edit").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(QuestionDTO.class)
+                        .flatMap(questionDTO -> updateQuestionUseCase.apply(questionDTO)
+                                .flatMap(result -> ServerResponse.ok()
+                                        .contentType(MediaType.APPLICATION_JSON)
+                                        .bodyValue(result))
+                        )
+        );
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> addReview(AddReviewUseCase addReviewUseCase) {
+        return route(PUT("/addreview").and(accept(MediaType.APPLICATION_JSON)),
+                request -> request.bodyToMono(Review.class)
+                        .flatMap(review -> addReviewUseCase.addReview(review)
+                                .flatMap(result -> ServerResponse.ok()
+                                        .contentType(MediaType.APPLICATION_JSON)
+                                        .bodyValue(result))
+                        )
+        );
+    }
+
 }
