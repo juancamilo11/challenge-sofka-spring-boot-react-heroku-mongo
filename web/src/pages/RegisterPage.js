@@ -35,37 +35,37 @@ export const RegisterPage = ({dispatch}) => {
         <div>
             <div className="sidenav">
                 <div className="login-main-text">
-                    <h2>Application<br/> Login Page</h2>
-                    <p>Login or register from here to access.</p>
+                    <h2 className="text-center m-2">Sign up for free</h2><br/> 
+                    <p className="text-center">By creating a new account you will be able to ask and answer</p>
                 </div>
             </div>
-            <div className="main">
-                <div className="col-md-6 col-sm-12">
+            <div className="form-control">
+                <div className="form-container">
                     <div className="login-form">
                         <form onSubmit={registerUser}>
                             <div className="form-group">
-                                <label>User Name</label>
+                                <label className="text-center form-label" >User Name</label>
                                 <input 
                                     type="text" 
                                     id="login"
                                     name="email"
-                                    className="form-control" 
+                                    className="form-input" 
                                     placeholder="User email"
                                     onChange={handleInputChange}
                                     value={userData.email} />
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
+                                <label className="text-center form-label">Password</label>
                                 <input 
                                     type="password" 
                                     id="password"
                                     name="password"
-                                    className="form-control"
+                                    className="form-input"
                                     placeholder="Password" 
                                     onChange={handleInputChange}
                                     value={userData.password} />
                             </div>
-                            <button type="submit" className="btn-login btn-email">Login</button>   
+                            <button type="submit" className="btn btn-light btn-ingresar mb-3">Sign up</button>   
                         </form>
                     </div>
                 </div>

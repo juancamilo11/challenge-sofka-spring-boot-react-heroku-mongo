@@ -258,3 +258,7 @@ textarea {
 .form-text {
   color:#ccc;
 }
+
+.form-control {
+  border: 2px solid red;
+}
