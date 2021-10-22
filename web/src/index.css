@@ -227,3 +227,34 @@ textarea {
   color:#aaa;
   margin-bottom:0;
 }
+
+
+/* Form */
+.form-control {
+  width:50%;
+  margin-left:25%;
+  margin-right:25%;
+}
+
+.btn-ingresar {
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.form-control {
+  background-color: #222;
+  padding-left:30px;
+  padding-right:30px;
+}
+
+.form-label {
+  color: #ccc;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+.form-text {
+  color:#ccc;
+}

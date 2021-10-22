@@ -69,43 +69,44 @@ export const LoginPage = ({dispatch}) => {
         <div>
             <div className="sidenav">
                 <div className="login-main-text">
-                    <h2>Application<br/> Login Page</h2>
-                    <p>Login or register from here to access.</p>
+                    <h2 className="text-center m-2">Login Page</h2><br/>
+                    <p className="text-center">Login or register from here to access.</p>
                 </div>
             </div>
-            <div className="main">
-                <div className="col-md-6 col-sm-12">
+            <div className="form-control">
+                <div className="form-container">
                     <div className="login-form">
                         <form onSubmit={loginUser}>
                             <div className="form-group">
-                                <label>User Name</label>
+                                <label className="text-center form-label" htmlFor="login">User Name</label>
                                 <input 
                                     type="text" 
                                     id="login"
                                     name="email"
-                                    className="form-control" 
+                                    className="form-input" 
                                     placeholder="User email"
                                     onChange={handleInputChange}
                                     value={userData.email} />
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
+                                <label className="text-center form-label" htmlFor="password">Password</label>
                                 <input 
                                     type="password" 
                                     id="password"
                                     name="password"
-                                    className="form-control"
+                                    className="form-input"
                                     placeholder="Password" 
                                     onChange={handleInputChange}
                                     value={userData.password} />
                             </div>
-                            <button type="submit" className="btn-login btn-email">Login</button>
+                            <button type="submit" className="btn btn-light btn-ingresar">Login</button>
+                            <p className="text-center mt-3 form-label">or</p>   
                             <button 
                                 type="button" 
-                                className="btn-login btn-google"
+                                className="btn btn-light btn-ingresar"
                                 onClick={signInWithGoogle}>Login with Google account</button>
                         </form>
-                        <div>New to this website? <Link to="/register">Click register</Link></div>
+                        <div><p className="mt-4 form-text">New to this website? <Link to="/register">Click here to Sign up!</Link></p></div>
                     </div>
                 </div>
             </div>

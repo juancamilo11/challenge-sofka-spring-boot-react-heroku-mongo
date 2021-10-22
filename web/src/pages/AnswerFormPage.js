@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Question } from '../components/Question'
 import { Input } from "../components/Input";
 
-const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, userId }) => {
+const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, userId, userEmail}) => {
     
     const [content, setContent] = useState('');
     const { id } = match.params;
@@ -23,6 +23,7 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
         
         const data = {
             userId,
+            userEmail,
             questionId:id,
             answer:content
         }
@@ -71,7 +72,8 @@ const mapStateToProps = state => ({
     redirect: state.question.redirect,
     question: state.question.question,
     hasErrors: state.question.hasErrors,
-    userId: state.auth.uid
+    userId: state.auth.uid,
+    userEmail: state.auth.email
 })
 
 export default connect(mapStateToProps)(FormPage)
