@@ -9,14 +9,14 @@ import Swal from 'sweetalert2';
 
 
 firebase.initializeApp({
-    apiKey: "AIzaSyD1FAJa3tEqtFHa2oBtr_hn3mEymVW5-aY",
-    authDomain: "chat-app-sofka.firebaseapp.com",
-    projectId: "chat-app-sofka",
-    storageBucket: "chat-app-sofka.appspot.com",
-    messagingSenderId: "125870203988",
-    appId: "1:125870203988:web:c22b550089554beae439c1",
-    measurementId: "G-5YS3R0Z7YC"
-  });
+    apiKey: "AIzaSyD-XF0fBY4pSzm13ylgeJFLy44oAK1K4bI",
+    authDomain: "questions-and-answers-app.firebaseapp.com",
+    projectId: "questions-and-answers-app",
+    storageBucket: "questions-and-answers-app.appspot.com",
+    messagingSenderId: "678373644462",
+    appId: "1:678373644462:web:4353d302b2e928edf6353f",
+    measurementId: "G-VZ0BXWXTR0"
+};
 
 
 const signInWithGoogle = () => {
