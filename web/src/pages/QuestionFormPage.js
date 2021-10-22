@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import { postQuestion } from '../actions/questionActions'
 import { connect } from 'react-redux'
 import {Input} from '../components/Input'
+import swal from 'sweetalert';  
+
 
 const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
     
@@ -76,7 +78,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                     <label htmlFor="question">Question</label>
                     <Input id="question" setContent={setContent}/>
                 </div>
-                <button type="submit" className="button" disabled={loading} >{
+                <button type="submit" className="button mt-2" disabled={loading} >{
                     loading ? "Saving ...." : "Save"
                 }</button>
             </form>

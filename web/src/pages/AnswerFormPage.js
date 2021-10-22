@@ -65,7 +65,7 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
                     <label htmlFor="answer">Answer</label>
                     <Input id="answer" setContent={setContent} />
                 </div>
-                <button type="submit" className="button" disabled={loading} >{
+                <button type="submit" className="button mt-2" disabled={loading} >{
                     loading ? "Saving ...." : "Save"
                 }</button>
             </form>
