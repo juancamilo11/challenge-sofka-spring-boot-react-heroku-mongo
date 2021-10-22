@@ -5,16 +5,15 @@ export const Input = ({setContent}) => {
 	const editor = useRef(null)
 
 	const config = {
-		readonly: false // all options from https://xdsoft.net/jodit/doc/
+		readonly: false
 	}
 	
 	return (
         <JoditEditor
             ref={editor}
             config={config}
-            tabIndex={1} // tabIndex of textarea
-            onBlur={newContent => setContent(newContent)} // update the content for performance reasons
-            onChange={newContent => {}}
+            tabIndex={1}
+            onBlur={newContent => setContent(newContent)}
         />
     );
 }

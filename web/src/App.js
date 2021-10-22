@@ -83,15 +83,6 @@ const App = ({ dispatch }) => {
   )
 }
 
-
-function SignIn() {
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  };
-  return <button className="button right" onClick={signInWithGoogle}>Sign in with google</button>;
-}
-
 function SignOut({ dispatch }) {
   return (
     auth.currentUser && (
@@ -107,6 +98,5 @@ function SignOut({ dispatch }) {
     )
   );
 }
-
 
 export default App

@@ -40,9 +40,9 @@ const QuestionsPage = ({ dispatch, loading, questions, hasErrors }) => {
         <section className="">
             <h1 className="text-center mt-3 mb-3">Questions</h1>
             <form>
-                <input type="text" onChange={handleSearch} />
+                <input type="text" className="form-control" onChange={handleSearch} placeholder="Search for a question"/>
                 <Link to={`/question/${goToVariable}`}>
-                    <input style={{style: 'none'}} type="submit" value="search" />
+                    <input  className="btn btn-danger btn-search" style={{style: 'none'}} type="submit" value="search" />
                 </Link>    
             </form>
             {renderQuestions()}

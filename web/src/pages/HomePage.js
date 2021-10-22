@@ -8,7 +8,7 @@ const HomePage = ({children}) => (
       <section className="col-12 mt-3 home-content">
         <h1>Home</h1>
         <p>welcome to the question and answer app.</p>
-        <img className="home-img" src={image} alt="Q and A Image" />
+        <img className="home-img" src={image} alt="Q and A home" />
         <Link to="/questions" className="button">
           View Questions
         </Link>  

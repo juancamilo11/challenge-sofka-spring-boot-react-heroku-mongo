@@ -230,8 +230,6 @@ textarea {
   margin-bottom:0;
 }
 
-
-/* Form */
 .form-control {
   width:50%;
   margin-left:25%;
@@ -265,6 +263,11 @@ textarea {
   margin-right: 35%;
 }
 
+.button:hover {
+  text-decoration: none;
+  color: unset;
+}
+
 .form-text {
   color:#ccc;
 }
@@ -291,6 +294,14 @@ textarea {
   position:absolute;
   right: 10px;
   top: 65px;
+}
+
+.btn-search {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+  height: 45px;
+  font-weight: 700;
 }
 
 .home-content {

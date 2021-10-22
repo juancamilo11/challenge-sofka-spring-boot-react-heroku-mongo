@@ -21,12 +21,18 @@ firebase.initializeApp({
 
 const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    auth.signInWithPopup(provider)
+        .then(()=>{
+            Swal.fire('Bienvenido')
+        })
+        .catch(()=>{
+            Swal.fire({
+                icon: 'error',
+                title: 'Ha ocurrido un error',
+                text: 'Usuario o contraseña invalida'
+            })
+        })
 };
-
-const signin = (email, password)=>{
-	return auth().signInWithEmailAndPassword(email, password);
-}
 
 const auth = firebase.auth();
 
@@ -49,12 +55,12 @@ export const LoginPage = ({dispatch}) => {
         event.preventDefault()
         return auth.signInWithEmailAndPassword(userData.email, userData.password)
             .then(()=>{
-                Swal.fire('Bienvenido....')
+                Swal.fire('Bienvenido')
             })
             .catch(()=>{
                 Swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
+                    title: 'Ha ocurrido un error',
                     text: 'Usuario o contraseña invalida'
                 })
             })

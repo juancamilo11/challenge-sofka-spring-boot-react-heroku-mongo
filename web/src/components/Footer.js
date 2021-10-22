@@ -17,7 +17,7 @@ export const Footer = () => {
                             <i className="fab fa-github"></i>
                         </a>
                     </div>
-                    <p className="copyright">Made with 💟 by JuanCamiloCC.</p>
+                    <p className="copyright">Made with <span role="img" aria-label="heart">💟</span> by JuanCamiloCC.</p>
                     <p className="copyright">SofkaU © 2021</p>
                 </footer>
             </div>
