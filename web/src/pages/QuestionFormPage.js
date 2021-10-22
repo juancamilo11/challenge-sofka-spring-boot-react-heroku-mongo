@@ -26,7 +26,6 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
             userId,
             question:content
         }
-        console.log(data);
         validateInput(data) && dispatch(postQuestion(data));
     }
 
@@ -48,7 +47,7 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
             <form onSubmit={onSubmit}>
                 <div>
                     <label htmlFor="type">Type</label>
-                    <select onChange={handleInputChange} id="type">
+                    <select name="type" id="type" onChange={handleInputChange} >
                         <option value="OPEN (LONG OPEN BOX)">OPEN (LONG OPEN BOX)</option>
                         <option value="OPINION (SHORT OPEN BOX)">OPINION (SHORT OPEN BOX)</option>
                         <option value="WITH RESULT (OPEN BOX WITH LINK)">WITH RESULT (OPEN BOX WITH LINK)</option>
@@ -57,7 +56,7 @@ const FormPage = ({ dispatch, loading, redirect, userId }) => {
                 </div>
                 <div>
                     <label htmlFor="category">Category</label>
-                    <select onChange={handleInputChange} id="category">
+                    <select name="category" id="category" onChange={handleInputChange} >
                         <option value="TECHNOLOGY AND COMPUTER">TECHNOLOGY AND COMPUTER</option>
                         <option value="SCIENCES">SCIENCES</option>
                         <option value="SOFTWARE DEVELOPMENT">SOFTWARE DEVELOPMENT</option>

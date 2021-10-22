@@ -66,7 +66,7 @@ const App = ({ dispatch }) => {
                 }} 
               />
             <Route
-              exact path="/Register"
+              exact path="/register"
               component={() => {
                 return (
                   <RegisterPage dispatch={dispatch}>
@@ -77,7 +77,7 @@ const App = ({ dispatch }) => {
             <Redirect to="/" />
           </Switch>
         </>
-      }
+      }  
       <Footer />
     </Router>
   )
