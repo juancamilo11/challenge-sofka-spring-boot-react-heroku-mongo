@@ -4,6 +4,7 @@ import {  fetchQuestion, postAnswer } from '../actions/questionActions'
 import { connect } from 'react-redux'
 import { Question } from '../components/Question'
 import { Input } from "../components/Input";
+import swal from 'sweetalert';  
 
 const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, userId, userEmail}) => {
     
@@ -27,7 +28,13 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
             questionId:id,
             answer:content
         }
-        validateInput(data) && dispatch(postAnswer(data));
+        if(validateInput(data)){
+            swal({
+                text:"The answer has been saved, an email has been sent to the person who asked the question.",
+                icon:"success"
+            });
+            dispatch(postAnswer(data));
+        }
     }
 
     useEffect(() => {

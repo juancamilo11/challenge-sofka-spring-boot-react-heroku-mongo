@@ -36,8 +36,10 @@ public class AddAnswerUseCase implements SaveAnswer {
                             question.getAnswers().add(answerDTO);
                             sendEmailService.sendMail(
                                     question.getUserEmail(),
-                                    "Anyone has answered one of your questions!",
-                                    "Go to out web page to see more details :)");
+                                    "Someone has answered one of your questions!",
+                                    "Hello! Hope you're doing great!\n" +
+                                            "You're receiving this email because someone answered on of your questions.\n\n" +
+                                            "Go to out web page to see more details :)");
 
                             return question;
                         })

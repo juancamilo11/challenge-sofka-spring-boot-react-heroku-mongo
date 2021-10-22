@@ -27,7 +27,13 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
             userEmail,
             question:content
         }
-        validateInput(data) && dispatch(postQuestion(data));
+        if(validateInput(data)){
+            swal({
+                text:"The question has been saved, once someone responds to you, then we'll send you an email.",
+                icon:"success"
+            });
+            dispatch(postQuestion(data));
+        } 
     }
 
     useEffect(() => {
