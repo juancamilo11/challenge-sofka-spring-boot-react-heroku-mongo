@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import favicon from '../img/favicon.ico'
 import question from '../img/question.png'
+import {UserNavInfo} from './UserNavInfo.js'
+
 export const PublicNavbar = () => (
   <nav className="navbar">
       <img className="img-icon" src={question} alt="Icon" style={{width:"35px"}}/>
@@ -22,5 +24,6 @@ export const PrivateNavbar = () => (
       <Link to="/new">New</Link>
       <Link to="/list">List</Link>
     </section>
+    {/* <UserNavInfo  /> */}
   </nav>
 )
