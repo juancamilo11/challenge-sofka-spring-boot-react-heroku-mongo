@@ -16,7 +16,7 @@ firebase.initializeApp({
     messagingSenderId: "678373644462",
     appId: "1:678373644462:web:4353d302b2e928edf6353f",
     measurementId: "G-VZ0BXWXTR0"
-};
+});
 
 
 const signInWithGoogle = () => {
