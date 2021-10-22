@@ -237,9 +237,17 @@ textarea {
 }
 
 .btn-ingresar {
+  background-color: #666;
+  border: 2px solid black;
   width: 30%;
   margin-left: 35%;
   margin-right: 35%;
+}
+
+.btn-ingresar:hover {
+  background-color: #888;
+  outline: 2px solid black;
+  transition: all 0.3s;
 }
 
 .form-control {
@@ -261,4 +269,16 @@ textarea {
 
 .form-control {
   border: 2px solid red;
+}
+
+.btn-google {
+  background-color: #db4a39;
+  border: 2px solid black;
+  border: none;
+}
+
+.btn-google:hover {
+  background-color: #a82717;
+  outline:2px solid #ccc;
+  transition: all 0.3s;
 }

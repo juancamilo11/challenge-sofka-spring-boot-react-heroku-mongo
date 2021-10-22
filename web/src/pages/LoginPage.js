@@ -103,7 +103,7 @@ export const LoginPage = ({dispatch}) => {
                             <p className="text-center mt-3 form-label">or</p>   
                             <button 
                                 type="button" 
-                                className="btn btn-light btn-ingresar"
+                                className="btn btn-light btn-ingresar btn-google"
                                 onClick={signInWithGoogle}>Login with Google account</button>
                         </form>
                         <div><p className="mt-4 form-text">New to this website? <Link to="/register">Click here to Sign up!</Link></p></div>
